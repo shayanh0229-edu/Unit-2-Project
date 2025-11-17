@@ -1,20 +1,29 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scan = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("Welcome to the Stock Analyzer. The below are commands you must use (Non-Case Sensitive");
 
+        System.out.println("Input a publicly traded company: createStock, (Ticker Symbol), (Market Cap in an Integer), (Number of Outstanding Shares)");
+        System.out.println("Example: createStock, NVDA, 100000, 100");
 
+        System.out.println("Show Stock Fluctuations over every (Integer n) hours: stockFluctuations, (Ticker Symbol), (Int n)");
+        System.out.println("Example: stockFluctuations, NVDA, 2");
+//
+//        System.out.println("In, (Ticker Symbol), (Market Cap in an Integer), (Number of Outstanding Shares)");
+        System.out.println("Example: createStock, NVDA, 100000, 100");
 
-            System.out
+        System.out.println("Show Stock Data: stockFluctuations, (Ticker Symbol)");
+        System.out.println("Example: stockFluctuations, NVDA, 2");
+
+        String creatorCommand =
+        for (int i = 0; i < 1; i --) {
+           scan.nextLine();
 
         }
+        }
     }
-}
