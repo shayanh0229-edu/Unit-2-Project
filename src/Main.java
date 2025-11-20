@@ -10,14 +10,14 @@ public class Main {
         System.out.println();
         System.out.println("Welcome to the Stock Analyzer. The below are commands you must use (Non-Case Sensitive)");
         System.out.println();
-        System.out.println("Input a publicly traded company: createStock, (Ticker Symbol), (Market Cap in an Integer), (Number of Outstanding Shares)");
+        System.out.println("Input a publicly traded company: createStock,(Ticker Symbol),(Market Cap in an Integer),(Number of Outstanding Shares)");
         System.out.println("Example: createStock, NVDA, 100000, 100");
         System.out.println();
-        System.out.println("Show Stock Fluctuations over every (Integer n) hours: stockFluctuations, (Ticker Symbol), (Int n)");
+        System.out.println("Show Stock Fluctuations over every hour: stockFluctuations,(Ticker Symbol)");
         System.out.println("Example: stockFluctuations, NVDA, 2");
         System.out.println();
         System.out.println("In, (Ticker Symbol), (Market Cap in an Integer), (Number of Outstanding Shares)");
-;
+        ;
 
         System.out.println("Show Stock Data: stockFluctuations, (Ticker Symbol)");
         System.out.println("Example: stockFluctuations, NVDA, 2");
@@ -25,25 +25,18 @@ public class Main {
         String creatorCommand = "createstock"; // the command variables are in lowercase in order to prevent case sensitivity
         String fluctuationsCommand = "stockfluctuations";
         String input = scan.nextLine().toLowerCase();
-        if (input.equals(creatorCommand)) {
-            System.out.println("What is the name of your stock?");
-            String name = scan.nextLine();
-            System.out.println("What is the Market Cap of this company?");
-            int marketCap = scan.nextInt();
-            System.out.println("How many shares are there?");
-            int shares = scan.nextInt();
-            StockCreator stock = new StockCreator(name, marketCap, shares);
 
+        for (int i = 0; i < 1;i++)
+        if (input.split(",")[0].equals(creatorCommand)) {
+            StockCreator stock = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]));
+            stock.displayStock();
+            scan.nextLine();
 
-        } else if (input.equals(fluctuationsCommand)) {
-            System.out
+        } else if (input.split(",")[0].equals(fluctuationsCommand)) {
+            System.out.println("Which stock's fluctuations would you like to see?");
         }
 
 
-
-
-
-
-        }
+    }
 
     }

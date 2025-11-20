@@ -11,10 +11,16 @@ public class StockCreator {
         numberOfShares = shares;
     }
     public void displayStock() {
-
-
-
+        System.out.println("Stock Name: " + stockName);
+        System.out.println("Market Cap: " + marketCapitalization);
+        System.out.println("Total Shares Avaialable: " + numberOfShares);
+        System.out.println("Price per Share: " + marketCapitalization/numberOfShares);
     }
+
+    public String returnSymbol() {
+        return stockName;
+    }
+
     public void stockFluctuations()
     {
         System.out.println("Value of a share of " + stockName + " over the hours of the market: ");
