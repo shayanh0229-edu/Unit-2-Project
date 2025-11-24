@@ -3,15 +3,18 @@ public class StockCreator {
     private String stockName;
     private int marketCapitalization;
     private int numberOfShares;
+    private int index;
 
-    public StockCreator(String name, int marketCap, int shares)
+    public StockCreator(String name, int marketCap, int shares, int simulationIndex)
     {
         stockName = name;
         marketCapitalization = marketCap;
         numberOfShares = shares;
+        index = simulationIndex;
     }
     public void displayStock() {
         System.out.println("Stock Name: " + stockName);
+        System.out.println("Simulation Index: " + index);
         System.out.println("Market Cap: " + marketCapitalization);
         System.out.println("Total Shares Avaialable: " + numberOfShares);
         System.out.println("Price per Share: " + marketCapitalization/numberOfShares);
