@@ -1,4 +1,4 @@
-import java.util.Locale;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,39 +10,44 @@ public class Main {
         System.out.println("In your simulated stock market, you may make up to 5 companies with indices from 1 to 5");
         System.out.println();
         System.out.println(" 1: Input a publicly traded company: 1,(Ticker Symbol),(Market Cap in an Integer),(Number of Outstanding Shares),(IndexNumber)");
-        System.out.println("Example: 1, NVDA, 100000,555,1");
+        System.out.println("Example: 1,NVDA, 100000,555,1");
         System.out.println();
         System.out.println(" 2: Show Stock Fluctuations over every hour: stockFluctuations,(Ticker Symbol)");
-        System.out.println("Example: 2, NVDA");
+        System.out.println("Example: 2,NVDA");
         System.out.println();
         System.out.println("In, (Ticker Symbol), (Market Cap in an Integer), (Number of Outstanding Shares)");
         System.out.println("Example: invest, NVDA, 100000, 100");
 
-        String creatorCommand = "CREATESTOCK"; // the command variables are in uppercase in order to prevent case sensitivity
-        String fluctuationsCommand = "STOCKFLUCTUATIONS"; //also makes the ticker symbols uppercase        
+      
+
+        StockCreator stock1 = new StockCreator("DUMMY", 100000, 1000, 1);
+        StockCreator stock2 = new StockCreator("DUMMY", 200000, 2000, 2);     
+        StockCreator stock3 = new StockCreator("DUMMY", 300000, 3000, 3);
+        StockCreator stock4 = new StockCreator("DUMMY", 400000, 4000, 4);
+        StockCreator stock5 = new StockCreator("DUMMY", 500000, 5000, 5);
 
         while (true) {
             String input = scan.nextLine().toUpperCase();
             if (input.split(",")[0].equals("1")) {
                 if (Integer.parseInt(input.split(",")[3]) == 1) {
-                    StockCreator one = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
-                    one.displayStock();
+                    stock1.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                    stock1.displayStock();
                     scan.nextLine();
                 } else if (Integer.parseInt(input.split(",")[3]) == 2) {
-                    StockCreator two = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
-                    two.displayStock();
+                    stock2.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                    stock2.displayStock();
                     scan.nextLine();
                 } else if (Integer.parseInt(input.split(",")[3]) == 3) {
-                    StockCreator three = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
-                    three.displayStock();
+                    stock3.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                    stock3.displayStock();
                     scan.nextLine();
                 } else if (Integer.parseInt(input.split(",")[3]) == 4) {
-                    StockCreator four = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
-                    four.displayStock();
+                    stock4.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                    stock4.displayStock();
                     scan.nextLine();
                 } else if (Integer.parseInt(input.split(",")[3]) == 5) {
-                    StockCreator five = new StockCreator(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
-                    five.displayStock();
+                    stock5.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                    stock5.displayStock();
                     scan.nextLine();
                 }
             } else if (input.split(",")[0].equals("2")) {
@@ -53,5 +58,18 @@ public class Main {
 
 
         }
+    }
+}
+
+
+
+
+
+
+
+
+   
+
+
     }
 }
