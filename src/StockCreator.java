@@ -20,8 +20,16 @@ public class StockCreator {
         System.out.println("Price per Share: " + marketCapitalization/numberOfShares);
     }
 
-    public String returnSymbol() {
-        return stockName;
+    public void setStock(String nameSet, int marketCapSet, int sharesSet, int simulationIndexSet) {
+        stockName = nameSet;
+        marketCapitalization = marketCapSet;
+        numberOfShares = sharesSet;
+        index = simulationIndexSet;
+    }
+
+    public boolean checkStockName(String dummyCheck)
+    {
+        return stockName.equals("DUMMY");
     }
 
     public void stockFluctuations()
