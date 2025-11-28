@@ -29,36 +29,81 @@ public class Main {
         while (true) {
             String input = scan.nextLine().toUpperCase();
             if (input.split(",")[0].equals("1")) {
-                if (Integer.parseInt(input.split(",")[3]) == 1) {
-                    stock1.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                if (Integer.parseInt(input.split(",")[4]) == 1) {
+                    if (input.split(",")[1].equals(stock2.getTickerSymbol()) || input.split(",")[1].equals(stock3.getTickerSymbol()) || input.split(",")[1].equals(stock4.getTickerSymbol()) || input.split(",")[1].equals(stock5.getTickerSymbol())) {
+                        System.out.println("Same ticker symbol already exists. Please choose a different one.");
+                        scan.nextLine();
+                    }
+                    stock1.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[4]));
                     stock1.displayStock();
                     scan.nextLine();
-                } else if (Integer.parseInt(input.split(",")[3]) == 2) {
-                    stock2.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                } else if (Integer.parseInt(input.split(",")[4]) == 2) {
+                    if (input.split(",")[1].equals(stock1.getTickerSymbol()) || input.split(",")[1].equals(stock3.getTickerSymbol()) || input.split(",")[1].equals(stock4.getTickerSymbol()) || input.split(",")[1].equals(stock5.getTickerSymbol())) {
+                        System.out.println("Same ticker symbol already exists. Please choose a different one.");
+                        scan.nextLine();
+                    }
+                    stock2.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[4]));
                     stock2.displayStock();
                     scan.nextLine();
-                } else if (Integer.parseInt(input.split(",")[3]) == 3) {
-                    stock3.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+
+                } else if (Integer.parseInt(input.split(",")[4]) == 3) {
+                    if (input.split(",")[1].equals(stock1.getTickerSymbol()) || input.split(",")[1].equals(stock2.getTickerSymbol()) || input.split(",")[1].equals(stock4.getTickerSymbol()) || input.split(",")[1].equals(stock5.getTickerSymbol())) {
+                        System.out.println("Same ticker symbol already exists. Please choose a different one.");
+                        scan.nextLine();
+                    }
+                    stock3.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[4]));
                     stock3.displayStock();
                     scan.nextLine();
-                } else if (Integer.parseInt(input.split(",")[3]) == 4) {
-                    stock4.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+
+                } else if (Integer.parseInt(input.split(",")[4]) == 4) {
+                    if (input.split(",")[1].equals(stock1.getTickerSymbol()) || input.split(",")[1].equals(stock2.getTickerSymbol()) || input.split(",")[1].equals(stock3.getTickerSymbol()) || input.split(",")[1].equals(stock5.getTickerSymbol())) {
+                        System.out.println("Same ticker symbol already exists. Please choose a different one.");
+                        scan.nextLine();
+                    }
+                    stock4.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[4]));
                     stock4.displayStock();
                     scan.nextLine();
-                } else if (Integer.parseInt(input.split(",")[3]) == 5) {
-                    stock5.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[3]));
+                  
+
+                } else if (Integer.parseInt(input.split(",")[4]) == 5) {
+                    if (input.split(",")[1].equals(stock1.getTickerSymbol()) || input.split(",")[1].equals(stock2.getTickerSymbol()) || input.split(",")[1].equals(stock3.getTickerSymbol()) || input.split(",")[1].equals(stock4.getTickerSymbol())) {
+                        System.out.println("Same ticker symbol already exists. Please choose a different one.");
+                        scan.nextLine();
+                    }
+                    stock5.setStock(input.split(",")[1], Integer.parseInt(input.split(",")[2]), Integer.parseInt(input.split(",")[3]), Integer.parseInt(input.split(",")[4]));
                     stock5.displayStock();
                     scan.nextLine();
                 }
             } else if (input.split(",")[0].equals("2")) {
-                System.out.println(input.split(",")[1]);
+                if (input.split(",")[1].toUpperCase().equals(stock1.getTickerSymbol())) {
+                    stock1.stockFluctuations();
+                } else if (input.split(",")[1].equals(stock2.getTickerSymbol())) {
+                    stock2.stockFluctuations();
+                } else if (input.split(",")[1].equals(stock3.getTickerSymbol())) {
+                    stock3.stockFluctuations();
+                } else if (input.split(",")[1].equals(stock4.getTickerSymbol())) {
+                    stock4.stockFluctuations();
+                } else if (input.split(",")[1].equals(stock5.getTickerSymbol())) {
+                    stock5.stockFluctuations();
+                }
                 scan.nextLine();
 
             }
 
 
         }
-    }
+}
+}
+
+
+
+
+
+
+
+   
+
+
 }
 
 
